@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TEDx Bucharest signature generator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="col-sm-12">
+        <div class="alert alert-info" role="alert">To use in Gmail, change the details, copy to clipboard and then go to <strong>Settings > Signature</strong> and paste the signature.</div>
+    </div>
+
+    <div id="TEDxBucharestSignatureGenerator">
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-sm-1 control-label">Name:</label>
+                <div class="col-sm-5">
+                    <input id="name" class="form-control" type="text" v-model="name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="position" class="col-sm-1 control-label">Position:</label>
+                <div class="col-sm-5">
+                    <input id="position" class="form-control" type="text" v-model="position" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-1 control-label">Phone:</label>
+                <div class="col-sm-5">
+                    <input id="phone" class="form-control" type="text" v-model="phone" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-1 control-label">Email:</label>
+                <div class="col-sm-5">
+                    <input id="email" class="form-control" type="text" v-model="email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-5">
+                    <div id="selectButton" class="btn btn-default" data-clipboard-target="#signature">
+                        <span class="glyphicon glyphicon-copy"></span>
+                        Copy to clipboard
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="signature well col-sm-offset-1 col-sm-5">
+            <table id="signature" style="font-weight: bold; color: #000000;">
+                <tr>
+                    <td colspan="2">{{ name }} <span style="color: #ee3724;">&bull;</span> {{ position }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{ phone }} <span style="color: #ee3724;">&bull;</span> {{ email }} <span style="color: #ee3724;">&bull;</span> www.tedxbucharest.ro</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 20px 0 6px 0;"><img src="{{ imgBase }}/sig-logo-event-top.png" /></td>
+                </tr>
+                <tr>
+                    <td style="width: 175px; vertical-align: bottom; padding-bottom: 9px;">
+                        <a href="https://www.facebook.com/TEDxBucharest.community"><img src="{{ imgBase }}/sig-facebook.png" alt="Facebook" /></a>
+                        <a href="https://twitter.com/TEDxBucharest7"><img src="{{ imgBase }}/sig-twitter.png" alt="Twitter" /></a>
+                        <a href="https://www.youtube.com/channel/UCtF2Ods-p8AS0nYLIMRpHPg"><img src="{{ imgBase }}/sig-youtube.png" alt="YouTube" /></a>
+                        <a href="https://www.linkedin.com/company/3654227"><img src="{{ imgBase }}/sig-linkedin.png" alt="LinkedIn" /></a>
+                    </td>
+                    <td><img src="{{ imgBase }}/sig-logo-event-right.png" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
